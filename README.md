@@ -104,15 +104,7 @@ print(f"Predicted role: {role}")
 
 ---
 
-## Experimental Results
 
-Our cross-model evaluation reveals significant challenges in role classification:
-
-| Model Pair           | Accuracy | Precision | Recall | F1 Score |
-|----------------------|---------:|----------:|-------:|---------:|
-| GPT-3.5 → GPT-4o     |     0.35 |      0.32 |   0.38 |     0.33 |
-| GPT-4o → Mistral     |     0.30 |      0.28 |   0.31 |     0.29 |
-| Mistral → Phi-3      |     0.38 |      0.36 |   0.39 |     0.37 |
 
 **Key Findings:**
 
