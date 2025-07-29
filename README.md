@@ -135,7 +135,7 @@ Our cross‑model evaluation reveals significant challenges in role classificati
 - \`GPT-4o.py\` – GPT‑4o model implementation  
 - \`mistral.py\` – Mistral model implementation  
 - \`VaxGuard_dataset.zip\` – Complete synthetic dataset  
-- \`vaxguard.pdf\` – Research paper with detailed methodology  
+ 
 
 ---
 
