@@ -1,6 +1,3 @@
-
-
-markdown
 # VaxGuard: A Synthetic Dataset for Detecting Sources of Health Misinformation
 
 
@@ -34,78 +31,23 @@ The dataset categorizes misinformation spreaders into four distinct roles:
 ## Dataset Structure
 
 
-VaxGaurd_dataset/
-└── VaxGaurd/
-    ├── GPT-3.5/
-    │   ├── COVID-19/
-    │   ├── HPV/
-    │   └── INFLUENZA/
-    ├── GPT-4o/
-    │   ├── COVID-19/
-    │   ├── HPV/
-    │   └── Influenza/
-    ├── Mistral/
-    │   ├── COVID-19/
-    │   ├── HPV/
+VaxGaurd_dataset/\
+└── VaxGaurd/\
+    ├── GPT-3.5/\
+    │   ├── COVID-19/\
+    │   ├── HPV/\
+    │   └── INFLUENZA/\
+    ├── GPT-4o/\
+    │   ├── COVID-19/\
+    │   ├── HPV/\
+    │   └── Influenza/\
+    ├── Mistral/\
+    │   ├── COVID-19/\
+    │   ├── HPV/\
     │   └── INFLUENZA/
 
 
 ---
-
-
-## Quick Start
-
-### 1. Data Generation
-
-Generate synthetic misinformation texts using different LLMs:
-
-
-from vaxguard import DataGenerator
-
-# Initialize generator
-generator = DataGenerator(model="gpt-3.5-turbo")
-
-# Generate samples for specific disease and role
-samples = generator.generate_samples(
-    disease="covid19",
-    role="religious_conspiracy",
-    num_samples=100
-)
-
-
-### 2. Cross-Model Evaluation
-
-Evaluate model performance across different generation sources:
-
-
-from vaxguard import CrossModelEvaluator
-
-# Train on GPT-3.5 generated data, test on GPT-4o
-evaluator = CrossModelEvaluator(
-    train_model="gpt-3.5",
-    test_model="gpt-4o"
-)
-
-results = evaluator.evaluate()
-print(f"F1 Score: {results['f1']:.3f}")
-
-
-### 3. Role Classification
-
-Classify misinformation roles in text:
-
-
-from vaxguard import RoleClassifier
-
-classifier = RoleClassifier.load_pretrained()
-text = "This pandemic is a test sent by a higher power to punish humanity for its sins."
-role = classifier.predict(text)
-print(f"Predicted role: {role}")
-
-
----
-
-
 
 **Key Findings:**
 
@@ -147,7 +89,6 @@ for disease in ["covid19", "hpv", "influenza"]:
         test_data = generate_samples(model_b, disease, role)
         classifier = train_classifier(train_data)
         results = evaluate_classifier(classifier, test_data)
-
 
 ---
 
