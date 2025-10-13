@@ -30,22 +30,22 @@ The dataset categorizes misinformation spreaders into four distinct roles:
 
 ## Dataset Structure
 
-
-VaxGaurd_dataset/\
-└── VaxGaurd/\
-    ├── GPT-3.5/\
-    │   ├── COVID-19/\
-    │   ├── HPV/\
-    │   └── INFLUENZA/\
-    ├── GPT-4o/\
-    │   ├── COVID-19/\
-    │   ├── HPV/\
-    │   └── Influenza/\
-    ├── Mistral/\
-    │   ├── COVID-19/\
-    │   ├── HPV/\
+```
+VaxGaurd_dataset/
+└── VaxGaurd/
+    ├── GPT-3.5/
+    │   ├── COVID-19/
+    │   ├── HPV/
     │   └── INFLUENZA/
-
+    ├── GPT-4o/
+    │   ├── COVID-19/
+    │   ├── HPV/
+    │   └── Influenza/
+    ├── Mistral/
+    │   ├── COVID-19/
+    │   ├── HPV/
+    │   └── INFLUENZA/
+```
 
 ---
 
@@ -82,6 +82,7 @@ VaxGaurd_dataset/\
 
 
 # Algorithm: Cross-Model Evaluation
+```
 for disease in ["covid19", "hpv", "influenza"]:
     for role in ["religious", "anti_vaccine", "fear_monger", "spreader"]:
         # Generate with model A, evaluate with model B
@@ -89,6 +90,7 @@ for disease in ["covid19", "hpv", "influenza"]:
         test_data = generate_samples(model_b, disease, role)
         classifier = train_classifier(train_data)
         results = evaluate_classifier(classifier, test_data)
+```
 
 ---
 
