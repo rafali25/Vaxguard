@@ -1,151 +1,44 @@
-# VaxGuard: A Synthetic Dataset for Detecting Sources of Health Misinformation
+# HealthRoleBench: Role-Aware Health Misinformation Benchmark
 
+HealthRoleBench is a **synthetic, role-aware benchmark** designed to evaluate how well large language models (LLMs) can identify *who* is spreading health misinformation rather than simply determining whether content is true or false.
 
-
-VaxGuard is a synthetic benchmark designed to evaluate the ability of language models to detect and classify sources of health misinformation across multiple diseases. Unlike traditional misinformation datasets that focus on content veracity, VaxGuard emphasizes persona-driven misinformation by identifying who spreads misinformation and why.
-
----
-
-## Key Features
-
-- **Role-Specific Classification**: Identifies four distinct misinformation roles  
-- **Multi-Disease Coverage**: Spans COVID-19, HPV, and Influenza  
-- **Cross-Model Evaluation**: Tests generalizability across different LLMs  
-- **Synthetic Data Generation**: Uses multiple LLMs (GPT-4o, GPT-3.5, Mistral, Phi-3) for diverse narrative generation  
+Unlike traditional misinformation datasets, HealthRoleBench focuses on **motivational intent**, enabling deeper analysis of how misinformation is framed, propagated, and generalized across models and diseases.
 
 ---
 
-## Misinformation Roles
+## 🧠 Core Motivation
 
-The dataset categorizes misinformation spreaders into four distinct roles:
+Most misinformation datasets emphasize factual correctness.  
+HealthRoleBench instead asks:
 
-| Role                          | Description                                                                  |
-|-------------------------------|------------------------------------------------------------------------------|
-| **Religious Conspiracy Theorist** | Frames diseases as divine punishment or spiritual tests                   |
-| **Anti-Vaccine**              | Actively opposes vaccination based on pseudoscience or institutional distrust |
-| **Fear Mongerer**             | Exaggerates risks and outcomes to incite panic                              |
-| **Misinformation Spreader**   | Shares false information without clear ideological intent                   |
+> *Who is speaking, and what motivates their misinformation?*
+
+This framing enables evaluation of **intent-level generalization**, which is essential for building socially aware and robust AI systems.
 
 ---
 
-## Dataset Structure
+## 🧬 Motivational Roles
 
-```
-VaxGaurd_dataset/
-└── VaxGaurd/
-    ├── GPT-3.5/
-    │   ├── COVID-19/
-    │   ├── HPV/
-    │   └── INFLUENZA/
-    ├── GPT-4o/
-    │   ├── COVID-19/
-    │   ├── HPV/
-    │   └── Influenza/
-    ├── Mistral/
-    │   ├── COVID-19/
-    │   ├── HPV/
-    │   └── INFLUENZA/
-```
+| Role | Description |
+|------|-------------|
+| **Religious Conspiracy Theorist** | Frames disease as divine punishment or spiritual consequence |
+| **Anti-Vaccine Advocate** | Opposes vaccination using pseudoscience or institutional distrust |
+| **Fear Monger** | Amplifies fear, urgency, and catastrophic outcomes |
+| **Misinformation Spreader** | Shares misleading information without explicit ideological intent |
 
 ---
 
-**Key Findings:**
+## 🌍 Disease Domains
 
-- No configuration exceeds 40% performance across metrics  
-- Role semantics don't consistently transfer across generation distributions  
-- Cross-disease generalization remains challenging  
-- Models show sensitivity to prompt variations  
+HealthRoleBench spans three public health contexts:
 
----
+- **COVID-19**
+- **HPV**
+- **Influenza**
 
-## File Structure
-
-- `GPT_3.5.py` – GPT-3.5 model implementation  
-- `GPT_4o.py` – GPT-4o model implementation  
-- `mistral.py` – Mistral model implementation  
-- `VaxGuard_dataset.zip` – Complete synthetic dataset  
+Each role is instantiated independently for each disease.
 
 ---
 
-## Methodology
+## 🧱 Dataset Structure
 
-### Data Generation Process
-
-1. **Prompt Template Design**  
-   Role-specific templates for each disease.  
-2. **LLM Generation**  
-   Multiple models generate diverse narratives.  
-3. **Quality Control**  
-   Manual verification for semantic consistency.  
-4. **Cross-Model Setup**  
-   Train/test splits across different generation models.
-
-
-# Algorithm: Cross-Model Evaluation
-```
-for disease in ["covid19", "hpv", "influenza"]:
-    for role in ["religious", "anti_vaccine", "fear_monger", "spreader"]:
-        # Generate with model A, evaluate with model B
-        train_data = generate_samples(model_a, disease, role)
-        test_data = generate_samples(model_b, disease, role)
-        classifier = train_classifier(train_data)
-        results = evaluate_classifier(classifier, test_data)
-```
-
----
-
-## Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
-1. Fork the repository  
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)  
-3. Commit your changes (`git commit -m "Add amazing feature"`)  
-4. Push to the branch (`git push origin feature/amazing-feature`)  
-5. Open a Pull Request  
-
----
-
-## Citation
-
-If you use VaxGuard in your research, please cite:
-
-
-@article{vaxguard2024,
-  title={VaxGuard: A Synthetic Dataset for Detecting Sources of Health Misinformation},
-  author={Anonymous ACL submission},
-  journal={arXiv preprint},
-  year={2024}
-}
-
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Ethics Statement
-
-All generated data is synthetically constructed to avoid real-world harm. We do not use or reproduce actual misinformation or user-generated content. Experiments were conducted following ethical guidelines for responsible AI research.
-
----
-
-## Limitations
-
-- Relies on synthetic data which may not capture full real-world complexity  
-- Fixed role taxonomy may not generalize beyond our definitions  
-- Limited to specific LLMs and may not represent all model behaviors  
-- Performance metrics indicate current limitations in role classification accuracy  
-
----
-
-## Contact
-
-For questions or collaborations, please open an issue or contact the maintainers.
-
----
-
-⚠ **Disclaimer:** This dataset is for research purposes only. The synthetic misinformation content should **not** be shared or used to spread actual misinformation.
