@@ -42,28 +42,28 @@ Each role is instantiated independently for each disease.
 
 ## 🧱 Dataset Structure
 
-HealthRoleBench/
-├─ GPT-3.5/
-│  ├─ COVID-19/
-│  ├─ HPV/
-│  └─ Influenza/
+HealthRoleBench/\
+├─ GPT-3.5/\
+│  ├─ COVID-19\
+│  ├─ HPV\
+│  └─ Influenza\
 │
-├─ GPT-4o/
-│  ├─ COVID-19/
-│  ├─ HPV/
-│  └─ Influenza/
+├─ GPT-4o/\
+│  ├─ COVID-19\
+│  ├─ HPV\
+│  └─ Influenza\
 │
-├─ LLaMA-3/
-│  ├─ COVID-19/
-│  ├─ HPV/
-│  └─ Influenza/
+├─ LLaMA-3/\
+│  ├─ COVID-19\
+│  ├─ HPV\
+│  └─ Influenza\
 │
-├─ Phi-3/
-│  ├─ COVID-19/
-│  ├─ HPV/
-│  └─ Influenza/
+├─ Phi-3/\
+│  ├─ COVID-19\
+│  ├─ HPV\
+│  └─ Influenza\
 │
-├─ Mistral/
-│  ├─ COVID-19/
-│  ├─ HPV/
-│  └─ Influenza/
+├─ Mistral/\
+│  ├─ COVID-19\
+│  ├─ HPV\
+│  └─ Influenza\
